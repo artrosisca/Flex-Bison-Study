@@ -12,7 +12,7 @@ LINHA       [\n]
 
 %%
 
-{TAG}          ;
+{TAG}          { printf("tag: %s\n", yytext); }
 {LINHA}        { linhas++; }
 {WHITESPACE}   { printf("%s ", yytext); }
 .              { printf("%s ", yytext); }

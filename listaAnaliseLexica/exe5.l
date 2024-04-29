@@ -3,7 +3,7 @@
 crescente.
 (b) Todas as cadeias de letras minusculas em que as letras estao em ordem lexicografica crescente.
 (c) Comentarios, consistindo em uma cadeia delimitada por /∗ e ∗/, onde a cadeia de coment´arios pode ter qualquer sequˆencia de dig´ıtos, letras e um conjunto de operadores especiais: !, ], %, &.
-(d) Todas as cadeias de a`s e b`s qu nao contem a subsequencia abb.*/
+(d) Todas as cadeias de a`s e b`s que nao contem a subsequencia abb.*/
 
 
 /* C)
@@ -19,15 +19,20 @@ crescente.
 
 %%
 
+
+
+[."abb"]a*b* { printf("Cadeia valida D: %s\n", yytext); }
+
 a*e*i*o*u* |
-A*E*I*O*U* { printf("Cadeia válida A: %s\n", yytext); }
+A*E*I*O*U* { printf("Cadeia valida A: %s\n", yytext); }
+a*b*^abb { printf("Cadeia valida D: %s\n", yytext); }
 
 a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v* { printf("Cadeia valida B: %s\n", yytext); }
 
 \/\*([a-zA-Z0-9!%\]&]*|(\*+([^\*\/]|[\r\n])))*\*\/ { printf("Cadeia valida C: %s\n", yytext); }
 
 
-. ;
+.|\n ;
 
 %%
 

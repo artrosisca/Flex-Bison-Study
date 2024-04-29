@@ -1,19 +1,23 @@
-/* Escreva definicoes regulares para as seguintes linguagens:
-(a) Todas as cadeias de letras minusculas que contem as cinco vogais em ordem lexicografica
-crescente.
-(b) Todas as cadeias de letras minusculas em que as letras estao em ordem lexicografica crescente.
-(c) Comentarios, consistindo em uma cadeia delimitada por /∗ e ∗/, onde a cadeia de coment´arios pode ter qualquer sequˆencia de dig´ıtos, letras e um conjunto de operadores especiais: !, ], %, &.
-(d) Todas as cadeias de a`s e b`s que nao contem a subsequencia abb.*/
-
-
-/* C)
-	\/\* como "/"" e "*" sao caracteres especiais em expressoes regulares a gente coloca a "\" antes para
-	demonstrar que queremos apenas o caracter e nao suas propriedades de expressoes regulares.
-	estudar melhor: (\*+([^\*\/]|[\r\n])))* 
-*/
-
 %{
+	/* 
+	Escreva definicoes regulares para as seguintes linguagens:
+	(a) Todas as cadeias de letras minusculas que contem as cinco vogais em ordem lexicografica
+	crescente.
+	(b) Todas as cadeias de letras minusculas em que as letras estao em ordem lexicografica crescente.
+	(c) Comentarios, consistindo em uma cadeia delimitada por /∗ e ∗/, onde a cadeia de coment´arios pode ter qualquer sequˆencia de dig´ıtos, letras e um conjunto de operadores especiais: !, ], %, &.
+	(d) Todas as cadeias de a`s e b`s que nao contem a subsequencia abb.
+	*/
 
+	/* 
+	C)
+	\/\* como "/"" e "*" sao caracteres especiais em expressoes regulares a gente coloca a "\" antes para		demonstrar que queremos apenas o caracter e nao suas propriedades de expressoes regulares.
+	estudar melhor: (\*+([^\*\/]|[\r\n])))* 
+	*/
+
+	/*
+	CLASSES DE CARACTERES são conjuntos de caracteres definidos entre colchetes [].
+	As expressões regulares são padrões de texto que definem um conjunto de strings. ESSE EXERCICIO
+	*/
 %}
 
 

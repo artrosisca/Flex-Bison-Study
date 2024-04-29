@@ -5,8 +5,12 @@ crescente.
 (c) Comentarios, consistindo em uma cadeia delimitada por /∗ e ∗/, onde a cadeia de coment´arios pode ter qualquer sequˆencia de dig´ıtos, letras e um conjunto de operadores especiais: !, ], %, &.
 (d) Todas as cadeias de a`s e b`s qu nao contem a subsequencia abb.*/
 
-/* \/\* como "/"" e "*" sao caracteres especiais em expressoes regulares a gente coloca a "\" antes para
-demonstrar que queremos apenas o caracter e nao suas propriedades de expressoes regulares.*/
+
+/* C)
+	\/\* como "/"" e "*" sao caracteres especiais em expressoes regulares a gente coloca a "\" antes para
+	demonstrar que queremos apenas o caracter e nao suas propriedades de expressoes regulares.
+	estudar melhor: (\*+([^\*\/]|[\r\n])))* 
+*/
 
 %{
 
@@ -20,7 +24,7 @@ A*E*I*O*U* { printf("Cadeia válida A: %s\n", yytext); }
 
 a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v* { printf("Cadeia valida B: %s\n", yytext); }
 
-\/\*([a-zA-Z0-9!%\]&]*|[^*]|(\*+([^*/]|[\r\n])))*\*\/ { printf("Cadeia valida C: %s\n", yytext); }
+\/\*([a-zA-Z0-9!%\]&]*|(\*+([^\*\/]|[\r\n])))*\*\/ { printf("Cadeia valida C: %s\n", yytext); }
 
 
 . ;

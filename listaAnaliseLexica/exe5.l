@@ -33,7 +33,8 @@ a*b*^abb { printf("Cadeia valida D: %s\n", yytext); }
 
 a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v* { printf("Cadeia valida B: %s\n", yytext); }
 
-\/\*([a-zA-Z0-9!%\]&]*|(\*+([^\*\/]|[\r\n])))*\*\/ { printf("Cadeia valida C: %s\n", yytext); }
+"/*"[a-zA-Z0-9 \t \n]*"*/" { printf("Cadeia valida C: %s\n", yytext); }
+"//"[a-zA-Z0-9 \t]*"\n" { printf("Cadeia valida C: %s\n", yytext); }
 
 
 .|\n ;

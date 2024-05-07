@@ -21,7 +21,7 @@
 
 %%
 
-[!.?] { printf("Caso valido para D: %s\n", yytext); }
+[!$.$?$] { printf("Caso valido para D: %s\n", yytext); }
 [a-fA-F]{-}[0-9] { printf("Caso valido para C: %s\n", yytext); }
 [aeiouAEIOU] { printf("Caso valido para B: %s\n", yytext); }
 [a-zA-Z]{-}[j-zJ-Z] { printf("Caso valido para A: %s\n", yytext); }

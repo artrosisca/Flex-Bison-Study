@@ -17,15 +17,12 @@
 	/*
 	CLASSES DE CARACTERES são conjuntos de caracteres definidos entre colchetes [].
 	As expressões regulares são padrões de texto que definem um conjunto de strings. ESSE EXERCICIO
+	
 	*/
 %}
 
 
 %%
-
-
-
-[."abb"]a*b* { printf("Cadeia valida D: %s\n", yytext); }
 
 a*e*i*o*u* |
 A*E*I*O*U* { printf("Cadeia valida A: %s\n", yytext); }
@@ -35,6 +32,10 @@ a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v* { printf("Cadeia valida B: %s\n", y
 
 "/*"[a-zA-Z0-9 \t \n]*"*/" { printf("Cadeia valida C: %s\n", yytext); }
 "//"[a-zA-Z0-9 \t]*"\n" { printf("Cadeia valida C: %s\n", yytext); }
+
+[a*b*]{-}[^"abb"] { printf("Cadeia valida D: %s\n", yytext); }
+
+
 
 
 .|\n ;
